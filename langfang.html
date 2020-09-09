@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="assets/swiper.min.css">
+    <script src="./assets/swiper.js"></script>
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/langfang.css">
+    <title>廊坊频道</title>
+
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="swiper-container swiper1" ref="swiperContainer">
+            <div class="swiper-wrapper swiper1">
+                <div class="swiper-slide" v-for='(item,index) in lunboList' :key="index" @click='goDetail(item.module_id,item.id,item.outlink,`http://share.hebtv.com/${item.unique_sign}${item.uri}`)'>
+                    <img :src="item.index_pic" alt="">
+                    <span>{{item.title|hideText}}</span>
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-bullets">
+                <span class="swiper-pagination-bullet" v-for='(item,index1) in lunboList'></span>
+                <!-- <span class="swiper-pagination-bullet"></span>-->
+            </div>
+        </div>
+        <div class="tab">
+            <ul>
+                <li v-for="(item, index) in tabList" :key="index" @click="tabView(index)">
+                    <a href="#">
+                        <div class="imgBox">
+                            <img :src="item.indexpic.host + item.indexpic.dir + item.indexpic.filepath + item.indexpic.filename"
+                                alt="">
+                        </div>
+                        <p>{{item.name}}</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="gray"></div>
+        <div class="news">
+            <div class="left">新闻<span>资讯</span></div>
+            <div class="swiper-container swiper2" ref="swiperContainer2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="height:0.52rem" v-for='(itemnews,indexnew) in newsList.topList' :key="indexnew">
+                        <div class="slide1" @click='goDetail(newsList.topList[indexnew].module_id,newsList.topList[indexnew].id,newsList.topList[indexnew].outlink,`http://share.hebtv.com/${newsList.topList[indexnew].unique_sign}${newsList.topList[indexnew].uri}`)'>
+                            <span class="fang">{{newsList.topList[indexnew].title|hideText()}}</span>
+                        </div>
+                        <div class="slide1" v-if='newsList.bottomList[indexnew]' @click='goDetail(newsList.bottomList[indexnew].module_id,newsList.bottomList[indexnew].id,newsList.bottomList[indexnew].outlink,`http://share.hebtv.com/${newsList.bottomList[indexnew].unique_sign}${newsList.bottomList[indexnew].uri}`)'>
+                            <span class="fang yuan">{{newsList.bottomList[indexnew].title|hideText()}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="informationBox" v-for='(itemColumn,indexColumn) in columnList' :key="indexColumn">
+            <div v-for='(item1,index1) in itemColumn.data' :key="index1"
+                @click='goDetail(item1.module_id,item1.id,item1.outlink,`http://share.hebtv.com/${item1.unique_sign}${item1.uri}`)'>
+                <!-- 左字右图-->
+                <div class="SNinformation" v-if='item1.css_id==2'>
+                    <div class="list">
+                        <div class="listLeft">
+                            <span>{{item1.title}}</span>
+                            <div class="time">
+                                <span v-if='item1.created_at'>{{item1.created_at|getTimeData()}}</span>
+                                <!-- <span class="icon" v-if='item1.click_num'><span>{{item1.click_num}}</span></span> -->
+                            </div>
+                        </div>
+                        <div class="listRight">
+                            <img :src="item1.index_pic" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- 左图右字-->
+                <div class="SNinformation" v-if='item1.css_id==11||item1.css_id==0'>
+                    <div class="list">
+                        <div class="listRight">
+                            <img :src="item1.index_pic" alt="">
+                        </div>
+                        <div class="listLeft">
+                            <span>{{item1.title}}</span>
+                            <div class="time">
+                                <span>{{item1.created_at|getTimeData()}}</span>
+				                <!-- <span class="icon" v-if='item1.click_num'><span>{{item1.click_num}}</span></span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 上字下三图 -->
+                <div class="SNinformation" v-if='item1.css_id==3'>
+                    <div class="list">
+                        <div class="listLeft listTop">
+                            <span>{{item1.title}}</span>
+                            <div class="picBox">
+                                <div class="imgBox" v-for='(item,i) in item1.childs_data' :key="i">
+                                    <img :src="item.host+item.dir+item.filepath+item.filename" alt="">
+                                </div>
+                            </div>
+                            <div class="time">
+                                <span>{{item1.created_at|getTimeData()}}</span>
+                            	<!-- <span class="icon" v-if='item1.click_num'><span>{{item1.click_num}}</span></span> -->
+				            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 上字下大图 -->
+                <div class="SNinformation" v-if='item1.css_id==4'>
+                    <div class="list" >
+                        <div class="listLeft listTop">
+                            <span>{{item1.title}}</span>
+                            <div class="imgBox big">
+                                <img :src="item1.index_pic" alt="">
+                            </div>
+                            <div class="time">
+                                <span>{{item1.created_at|getTimeData()}}</span>
+                            	<!-- <span class="icon" v-if='item1.click_num'><span>{{item1.click_num}}</span></span> -->
+				            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 纯文字 -->
+                <div class="SNinformation" v-if='item1.css_id==1'>
+                    <div class="list">
+                        <div class="listLeft listTop">
+                            <span>{{item1.title}}</span>
+                            <div class="time">
+                                <span>{{item1.created_at|getTimeData()}}</span>
+                            	<!-- <span class="icon" v-if='item1.click_num'><span>{{item1.click_num}}</span></span> -->
+			                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	   <div class="more" style="
+            text-align:center;
+            font-size: 0.16rem;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: #999;
+            height:0.5rem;
+            line-height:0.5rem;" 
+            @click='getMore()' v-if='moreFlag'>加载更多</div>
+        </div>
+
+    </div>
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./assets/zepto.min.js"></script>
+<script src="./assets/sdk.js"></script>
+<script src="./assets/vconsole.min.js"></script>
+<script src="./js/langfang.js"></script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="assets/swiper.min.css">
+    <script src="./assets/swiper.js"></script>
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/life.css">
+    <title>生活列表</title>
+    <style>
+        .last {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.17rem;
+        }
+        .list{
+            margin-top: 0!important;
+        }
+    </style>
+
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="informationBox">
+            <div class="SNinformation" style="padding-top:0;">
+                <div class="list" v-for='(item,index) in listData' :key="index" @click='goDetail(item.module_id,item.id,item.outlink,`http://share.hebtv.com/${item.unique_sign}${item.uri}`)'>
+                    <div class="topPic" v-if='index==0&&item.column_name=="国医话健康"'>
+                        <!-- <p>金正大入选“国家品牌计划”，为中国农业品牌代言！</p> -->
+                        <img :src="item.index_pic" alt="" style="margin-top:0">
+                    </div>
+                    <div class='last' v-else>
+                        <div class="listLeft">
+                            <span>{{item.title}}</span>
+                            <div class="time">
+                                <span>{{item.created_at}}</span>
+                                <!-- <span>12:12:12</span> -->
+                            </div>
+                        </div>
+                        <div class="listRight" v-if='item.is_have_content_video==0||item.is_have_content_tuji==1'>
+                            <img :src="item.index_pic" alt="">
+                        </div>
+                        <div class="listRight" v-if='item.is_have_content_video==1'>
+                            <video :src="item.video.host+item.video.dir+item.video.filepath+item.video.filename"
+                                :poster="item.index_pic?item.index_pic:'./images/02.jpg'" x5-playsinline="true" webkit-playsinline="true" playsinline="true"></video>
+                            <div class="play">
+                                <img src="./images/time.png" alt="">
+                                <span>{{item.duration_format}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</head>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./assets/zepto.min.js"></script>
+<script src="./assets/sdk.js"></script>
+<script src="./js/lifeList.js"></script>
+
+</html>

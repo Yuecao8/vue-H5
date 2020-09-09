@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/voteIntroduce.css">
+    <title>投票介绍页</title>
+</head>
+
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="topPic">
+            <img :src="introduceList.src" alt="">
+            <span>{{introduceList.title}}</span>
+        </div>
+        <div class="introduce">
+            <div class="join" v-html='introduceList.content'>
+            </div>
+        </div>
+        <div class="bottomLast">
+            <ul>
+                <li>
+                    <a class="bigBox" :href='"./voteIndex.html?id="+introduceList.vote_id'>
+                        <div class="imgBox">
+                            <img src="./images/index.png" alt="">
+                        </div>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a class="bigBox" :href='"./voteIntroduce.html?id="+introduceList.vote_id'>
+                        <div class="imgBox">
+                            <img src="./images/introductionActive.png" alt="">
+                        </div>
+                        <p>活动介绍</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="bigBox" :href='"./voteRanking.html?id="+introduceList.vote_id'>
+                        <div class="imgBox">
+                            <img src="./images/rank.png" alt="">
+                        </div>
+                        <p>排名</p>
+                    </a>
+                </li>
+            </ul> 
+        </div>
+    </div>
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./js/voteIntroduce.js"></script>
+<!-- http://mapi.hebei.com.cn -->
+</html>

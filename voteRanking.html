@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/voteRanking.css">
+    <title>投票排名</title>
+</head>
+
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="topPic">
+            <img :src="detailList.src" alt="">
+            <span>{{detailList.title}}</span>
+
+        </div>
+        <div class="voteTime">
+
+            <div class="time">
+                <h3>活动结束倒计时</h3>
+                <div class="timeAll">
+                    <span>{{time.D}}天</span>
+                    <span>{{time.h}}时</span>
+                    <span>{{time.m}}分</span>
+                    <span>{{time.s}}秒</span>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="choose">
+            <ul>
+                <li v-for="(item, index) in sortList" :key="index" :class="{active: curTab == index}" @click="tabView(index,item.name)">{{item.name}}</li>
+                <!-- <li>选项2</li>
+                    <li>选项3</li>
+                    <li>选项4</li>
+                    <li>选项4</li>
+                    <li>选项4</li> -->
+            </ul>
+        </div>
+        <div class="tabList">
+            <ul>
+                <li v-for='(item,index) in rankList' :key="index">
+                    <div class="left">
+                        <div class="imgBox">
+                            <img :src="item.index_pic" alt="">
+                        </div>
+                        <div class="content">
+                            <h4>{{item.title}}</h4>
+                            <p>票数：{{item.real_total_votes}}</p>
+                            <p>{{detailList.title}}</p>
+                        </div>
+                    </div>
+                    <div class="right" v-if='index<=2'>
+                        <img src="./images/first.png" alt="">
+                        <span>{{index+1}}</span>
+                    </div>
+                    <div class="right" v-else>
+                        <img src="./images/last.png" alt="">
+                        <span class="last">{{index+1}}</span>
+                    </div>
+                </li>
+                <!-- <li>
+                        <div class="left">
+                            <div class="imgBox">
+                                <img src="./images/02.jpg" alt="">
+                            </div>
+                            <div class="content">
+                                <h4>1089高新区宣传片</h4>
+                                <p>票数：111</p>
+                                <p>美丽河北</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <img src="./images/first.png" alt="">
+                        </div>
+                    </li> -->
+            </ul>
+        </div>
+        <div class="bottomLast">
+            <ul>
+                <li>
+                    <a class="bigBox" :href='"./voteIndex.html?id="+detailList.id'>
+                        <div class="imgBox">
+                            <img src="./images/index.png" alt="">
+                        </div>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="bigBox" :href='"./voteIntroduce.html?id="+detailList.id'>
+                        <div class="imgBox">
+                            <img src="./images/introduction.png" alt="">
+                        </div>
+                        <p>活动介绍</p>
+                    </a>
+                </li>
+                <li  class="active">
+                    <a class="bigBox" :href='"./voteRanking.html?id="+detailList.id'>
+                        <div class="imgBox">
+                            <img src="./images/rankAtive.png" alt="">
+                        </div>
+                        <p>排名</p>
+                    </a>
+                </li>
+            </ul> 
+        </div>
+    </div>
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./js/voteRanking.js"></script>
+
+</html>

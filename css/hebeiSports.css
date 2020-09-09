@@ -1,0 +1,163 @@
+#app .swiper-container {
+  height: 1.95rem;
+}
+#app .swiper-container .swiper-slide {
+  width: 100%;
+  height: 1.9rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#app .swiper-container .swiper-slide img {
+  width: 100%;
+}
+#app .swiper-container .swiper-slide span {
+  display: block;
+  position: absolute;
+  left: 0rem;
+  bottom: 0rem;
+  width: 100%;
+  height: 0.5rem;
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 0.5rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  padding: 0.1rem 0 0 0.1rem;
+}
+#app .swiper-container .swiper-pagination {
+  display: flex;
+  justify-content: flex-end;
+  height: 0.12rem;
+}
+#app .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 0.06rem;
+  height: 0.06rem;
+  background: #fff;
+  margin-right: 0.075rem;
+  margin-left: 0;
+}
+#app .swiper-container .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0.12rem;
+}
+#app .tab {
+  width: 100%;
+}
+#app .tab ul {
+  height: 0.63rem;
+  display: flex;
+  justify-content: space-between;
+}
+#app .tab ul li {
+  width: 20%;
+  height: .63rem;
+  display: flex;
+  justify-content: center;
+}
+#app .tab ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+#app .tab ul li .imgBox {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+#app .tab ul li .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+#app .tab ul li p {
+  font-size: 0.12rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+#app .tab ul li.active {
+  border-bottom: 0.015rem solid #25A8FF;
+}
+#app .informationBox .information {
+  height: 0.06rem;
+  margin-top: 0.18rem;
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+#app .informationBox .SNinformation {
+  padding: 0rem 0.12rem 0 0.12rem;
+}
+#app .informationBox .SNinformation .list {
+  margin-top: 0.17rem;
+  padding-bottom: 0.09rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EEE;
+}
+#app .informationBox .SNinformation .list .listLeft {
+  width: 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#app .informationBox .SNinformation .list .listLeft span {
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+#app .informationBox .SNinformation .list .listLeft .time {
+  display: flex;
+  height: 0.14rem;
+}
+#app .informationBox .SNinformation .list .listLeft .time span {
+  font-size: 0.1rem;
+  margin-right: 0.05rem;
+}
+#app .informationBox .SNinformation .list .listRight {
+  width: 1.125rem;
+  height: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+#app .informationBox .SNinformation .list .listRight img {
+  width: 100%;
+}
+#app .informationBox .SNinformation .list .listRight video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+#app .informationBox .SNinformation .list .listRight .play {
+  width: 0.41rem;
+  height: 0.125rem;
+  position: absolute;
+  right: 0.05rem;
+  bottom: 0.05rem;
+}
+#app .informationBox .SNinformation .list .listRight .play img {
+  width: 100%;
+  height: 100%;
+}
+#app .informationBox .SNinformation .list .listRight .play span {
+  display: inline-block;
+  position: absolute;
+  right: 0rem;
+  bottom: -0.01rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 0.1rem;
+  -webkit-transform: scale(0.9);
+}
+#app .informationBox .SNinformation .list:last-child {
+  border: none;
+}

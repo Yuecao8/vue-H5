@@ -1,0 +1,346 @@
+#app .swiper-container {
+  height: 1.95rem;
+  box-sizing: border-box;
+}
+#app .swiper-container .swiper-slide {
+  width: 100%;
+  height: 1.9rem;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+}
+#app .swiper-container .swiper-slide img {
+  width: 100%;
+}
+#app .swiper-container .swiper-slide span {
+  display: block;
+  position: absolute;
+  left: 0rem;
+  bottom: 0rem;
+  width: 100%;
+  height: 0.5rem;
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 0.5rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  padding: 0.1rem 0 0 0.1rem;
+}
+#app .swiper-container .swiper-pagination {
+  display: flex;
+  justify-content: flex-end;
+  height: 0.12rem;
+}
+#app .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 0.06rem;
+  height: 0.06rem;
+  background: #fff;
+  margin-right: 0.075rem;
+  margin-left: 0;
+}
+#app .swiper-container .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0.12rem;
+}
+#app .tab {
+  width: 100%;
+}
+#app .tab .tab_2 {
+  margin-top: 0.11rem;
+  padding: 0 0.16rem;
+}
+#app .tab .tab_3 {
+  padding-top: 0.2rem;
+  border-top: 1px solid #EEE;
+}
+#app .tab .tab_3 .imgBox {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+#app .tab .tab_4 {
+  padding-top: 0.1rem;
+}
+#app .tab .tab_4 .imgBox {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+}
+#app .tab ul {
+  display: flex;
+  justify-content: space-between;
+}
+#app .tab ul li {
+  width: 33.333%;
+  display: flex;
+  justify-content: center;
+}
+#app .tab ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+#app .tab ul li .imgBox {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+#app .tab ul li .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+#app .tab ul li p {
+  margin-top: 0.075rem;
+  font-size: 0.12rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 0.075rem;
+}
+#app .tab ul li.active {
+  border-bottom: 0.015rem solid #25A8FF;
+}
+#app .informationBox .information {
+  height: 0.06rem;
+  margin-top: 0.18rem;
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+#app .informationBox .information .margin0 {
+  margin-left: 0;
+}
+#app .informationBox .information span {
+  font-size: 0.17rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  padding: 0.1rem 0.1rem;
+  line-height: 0rem;
+  display: inline-block;
+  position: relative;
+  margin-left: 0.5rem;
+}
+#app .informationBox .information span .imgBox {
+  position: absolute;
+  left: -0.3rem;
+  top: -0.16rem;
+  width: 0.3rem;
+  height: 0.3rem;
+}
+#app .informationBox .information span .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+#app .informationBox .information span .imgBox.leftLess {
+  left: -0.15rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  top: -0.1rem;
+}
+#app .informationBox .information .marginLeftLess {
+  margin-left: 0.3rem;
+}
+#app .informationBox .information img {
+  width: 1.2rem;
+  height: 0.2rem;
+}
+#app .informationBox .SNinformation {
+  padding: 0.2rem 0.12rem 0 0.12rem;
+}
+#app .informationBox .SNinformation .top {
+  display: flex;
+  justify-content: space-between;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+#app .informationBox .SNinformation .top .left {
+  color: #25a8ff;
+  font-size: 0.14rem;
+}
+#app .informationBox .SNinformation .top .left img {
+  margin-top: 0.05rem;
+  width: 0.025rem;
+  height: 0.08rem;
+}
+#app .informationBox .SNinformation .top .right {
+  color: #999999;
+  font-size: 0.12rem;
+}
+#app .informationBox .SNinformation .topPic {
+  margin-top: 0.07rem;
+}
+#app .informationBox .SNinformation .topPic p {
+  margin-top: 0.15rem;
+  font-size: 0.14rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  line-height: 0.2rem;
+}
+#app .informationBox .SNinformation .topPic img {
+  margin-top: 0.15rem;
+  width: 100%;
+  height: 1.8rem;
+}
+#app .informationBox .SNinformation .videosBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left {
+  width: 50%;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left .video_one {
+  margin-top: 0.12rem;
+  width: 1.7rem;
+  height: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left .video_one video {
+  width: 100%;
+  object-fit: fill;
+  height: 100%;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left .video_one img {
+  width: 100%;
+  height: 100%;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left .video_one .play {
+  width: 0.41rem;
+  height: 0.125rem;
+  position: absolute;
+  right: 0.05rem;
+  bottom: 0.05rem;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left .video_one .play img {
+  width: 100%;
+  height: 100%;
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left .video_one .play span {
+  display: inline-block;
+  position: absolute;
+  right: -0.01rem;
+  bottom: -0.01rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 0.1rem;
+  -webkit-transform: scale(0.9);
+}
+#app .informationBox .SNinformation .videosBox .videoBox_left p {
+  margin-top: 0.075rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  font-size: 0.14rem;
+  width: 95%;
+  padding-left: 0.05rem;
+}
+#app .informationBox .SNinformation .list {
+  margin-top: 0.17rem;
+  padding-bottom: 0.09rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EEE;
+}
+#app .informationBox .SNinformation .list .listLeft {
+  width: 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#app .informationBox .SNinformation .list .listLeft span {
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+#app .informationBox .SNinformation .list .listLeft .time {
+  display: flex;
+  height: 0.14rem;
+}
+#app .informationBox .SNinformation .list .listLeft .time span {
+  font-size: 0.1rem;
+  margin-right: 0.05rem;
+}
+#app .informationBox .SNinformation .list .listRight {
+  width: 1.125rem;
+  height: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+#app .informationBox .SNinformation .list .listRight img {
+  width: 100%;
+}
+#app .informationBox .SNinformation .list .listRight video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+#app .informationBox .SNinformation .list .listRight .play {
+  width: 0.41rem;
+  height: 0.125rem;
+  position: absolute;
+  right: 0.05rem;
+  bottom: 0.05rem;
+}
+#app .informationBox .SNinformation .list .listRight .play img {
+  width: 100%;
+  height: 100%;
+}
+#app .informationBox .SNinformation .list .listRight .play span {
+  display: inline-block;
+  position: absolute;
+  right: 0rem;
+  bottom: -0.01rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 0.1rem;
+  -webkit-transform: scale(0.9);
+}
+#app .informationBox .SNinformation .list:last-child {
+  border: none;
+}
+#app .informationBox .SNinformation .tujis {
+  overflow: hidden;
+  overflow-x: auto;
+}
+#app .informationBox .SNinformation .tujis ul {
+  overflow: hidden;
+  overflow-x: auto;
+  display: flex;
+}
+#app .informationBox .SNinformation .tujis li {
+  margin-right: 0.15rem;
+  width: 1.17rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+}
+#app .informationBox .SNinformation .tujis li .liImg {
+  width: 1.17rem;
+  height: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  overflow: hidden;
+}
+#app .informationBox .SNinformation .tujis li .liImg img {
+  width: 100%;
+}
+#app .informationBox .SNinformation .tujis li span {
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  font-size: 0.14rem;
+}

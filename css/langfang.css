@@ -1,0 +1,246 @@
+.swiper1 {
+  height: 1.95rem;
+}
+.swiper1 .swiper-slide {
+  width: 100%;
+  height: 1.9rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.swiper1 .swiper-slide img {
+  width: 100%;
+}
+.swiper1 .swiper-slide span {
+  display: block;
+  position: absolute;
+  left: 0rem;
+  bottom: 0rem;
+  width: 100%;
+  height: 0.5rem;
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 0.5rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  padding: 0.1rem 0 0 0.1rem;
+}
+.swiper1 .swiper-pagination {
+  display: flex;
+  justify-content: flex-end;
+  height: 0.12rem;
+}
+.swiper1 .swiper-pagination .swiper-pagination-bullet {
+  width: 0.06rem;
+  height: 0.06rem;
+  background: #fff;
+  margin-right: 0.075rem;
+  margin-left: 0;
+}
+.swiper1 .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0.12rem;
+}
+.tab {
+  width: 100%;
+}
+.tab ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.1rem 0.25rem;
+}
+.tab ul li {
+  display: flex;
+  justify-content: center;
+}
+.tab ul li a {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab ul li .imgBox {
+  width: 0.44rem;
+  height: 0.44rem;
+}
+.tab ul li .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+.tab ul li p {
+  margin-top: 0.075rem;
+  font-size: 0.12rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.gray {
+  width: 100%;
+  height: 0.06rem;
+  background: #f4f4f4;
+}
+.news {
+  padding: 0.12rem 0rem;
+  margin: 0 0.12rem;
+  border-bottom: .005rem solid #EEEEEE;
+}
+.news .left {
+  width: 0.34rem;
+  float: left;
+  font-size: .17rem;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  line-height: .3rem;
+  color: #666666;
+}
+.news .left span {
+  color: #25A8FF;
+}
+.news .swiper2 {
+  height: 0.52rem;
+  padding-left: 0.225rem;
+}
+.news .swiper2 .swiper-slide {
+  display: fixed;
+  flex-direction: column;
+  align-items: center;
+  font-size: .16rem;
+}
+.news .swiper2 .swiper-slide .slide1 {
+  font-size: .16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.news .swiper2 .swiper-slide .slide1 .fang::before {
+  display: block;
+  content: '';
+  width: 0.05rem;
+  height: 0.05rem;
+  background-color: #dadada;
+  position: relative;
+  left: -0.1rem;
+  top: .15rem;
+}
+.news .swiper2 .swiper-slide .slide1 .yuan::before {
+  border-radius: 50%;
+}
+.informationBox .information {
+  height: 0.06rem;
+  margin-top: 0.18rem;
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+.informationBox .SNinformation {
+  padding: 0rem 0.12rem 0 0.12rem;
+}
+.informationBox .SNinformation .list {
+  margin-top: 0.17rem;
+  padding-bottom: 0.09rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EEE;
+}
+.informationBox .SNinformation .list .listLeft {
+  width: 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.informationBox .SNinformation .list .listLeft span {
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.informationBox .SNinformation .list .listLeft .time {
+  display: flex;
+  height: 0.14rem;
+  margin-top: 0.1rem;
+<<<<<<< Updated upstream
+  line-height: 0.14rem;
+=======
+  line-height:0.14rem;
+>>>>>>> Stashed changes
+}
+.informationBox .SNinformation .list .listLeft .time span {
+  font-size: 0.1rem;
+  line-height:0.14rem;
+  color: #999999;
+}
+.informationBox .SNinformation .list .listLeft .time .icon {
+  margin-left: 0.12rem;
+  background: url(../images/liulan.png) left center  no-repeat;
+  background-size: 0.13rem 0.1rem;
+}
+.informationBox .SNinformation .list .listLeft .time .icon span {
+  margin-left: 0.15rem;
+}
+.informationBox .SNinformation .list .listTop {
+  width: 100%;
+}
+.informationBox .SNinformation .list .listTop .picBox {
+  margin-top: 0.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.informationBox .SNinformation .list .listTop .imgBox {
+  width: 1.125rem;
+  height: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+}
+.informationBox .SNinformation .list .listTop .imgBox img {
+	width: 100%;
+  /* max-width: 100%; */
+}
+.informationBox .SNinformation .list .listTop .imgBox.big {
+  margin-top: 0.1rem;
+  width: 100%;
+  height: 1.8rem;
+}
+.informationBox .SNinformation .list .listRight {
+  width: 1.125rem;
+  height: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.informationBox .SNinformation .list .listRight img {
+  width: 100%;
+}
+.informationBox .SNinformation .list .listRight video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.informationBox .SNinformation .list .listRight .play {
+  width: 0.41rem;
+  height: 0.125rem;
+  position: absolute;
+  right: 0.05rem;
+  bottom: 0.05rem;
+}
+.informationBox .SNinformation .list .listRight .play img {
+  width: 100%;
+  height: 100%;
+}
+.informationBox .SNinformation .list .listRight .play span {
+  display: inline-block;
+  position: absolute;
+  right: 0rem;
+  bottom: -0.01rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 0.1rem;
+  -webkit-transform: scale(0.9);
+}

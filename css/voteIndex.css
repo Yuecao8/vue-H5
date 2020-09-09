@@ -1,0 +1,303 @@
+#app .topPic {
+  position: relative;
+  width: 3.75rem;
+  height: 2.5rem;
+}
+#app .topPic img {
+  width: 100%;
+  height: 100%;
+}
+#app .topPic span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.5rem;
+  font-size: 0.16rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 0.5rem;
+  padding: 0.1rem 0 0 0.1rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+#app .voteAll {
+  width: 3.75rem;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+#app .voteAll ul {
+  display: flex;
+  justify-content: space-between;
+}
+#app .voteAll li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0.12rem 0rem;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+}
+#app .voteAll li:nth-of-type(2) {
+  border-left: 0.005rem solid #DADADA;
+  border-right: 0.005rem solid #DADADA;
+}
+#app .voteAll .top {
+  display: flex;
+  justify-content: space-between;
+}
+#app .voteAll .top .imgBox {
+  width: 0.15rem;
+  height: 0.15rem;
+  margin-right: 0.025rem;
+}
+#app .voteAll .top .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+#app .voteAll .top span {
+  font-size: 0.12rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+#app .voteAll .bottom {
+  margin-top: 0.1rem;
+  text-align: center;
+  font-size: 0.14rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #f22727;
+}
+#app .voteTime {
+  padding: 0 0.45rem 0.25rem 0.45rem;
+}
+#app .voteTime .time {
+  margin-top: 0.25rem;
+  text-align: center;
+}
+#app .voteTime .time h3 {
+  font-size: 0.14rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #999999;
+  line-height: 0.2rem;
+  margin-bottom: 0.11rem;
+}
+#app .voteTime .time p {
+  font-size: 0.13rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  line-height: 0.18rem;
+}
+#app .voteTime .time .timeAll {
+  display: flex;
+  justify-content: space-between;
+}
+#app .voteTime .time .timeAll span {
+  width: 0.55rem;
+  height: 0.27rem;
+  border-radius: 0.03rem;
+  border: 1px solid #bdbdbd;
+  font-size: 0.15rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  line-height: 0.27rem;
+  text-align: center;
+}
+#app .space {
+  height: 0.07rem;
+  background: #f7f7f7;
+}
+#app .choose {
+  margin-top: 0.1rem;
+  overflow: hidden;
+  overflow-x: auto;
+  padding: 0 0.12rem;
+  border-bottom: 0.005rem solid #eeeeee;
+}
+#app .choose ul {
+  overflow: hidden;
+  overflow-x: auto;
+  display: flex;
+}
+#app .choose ul li {
+  flex-shrink: 0;
+  padding: 0 0.56rem;
+  height: 0.47rem;
+  font-size: 0.16rem;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  line-height: 0.47rem;
+  color: #333333;
+}
+#app .choose ul li.active {
+  color: #25a8ff;
+  background: url(../images/lineBottom.png) center center no-repeat;
+  background-size: 0.1rem 0.02rem;
+  background-position: bottom;
+}
+#app .searchBox {
+  padding: 0 0.12rem;
+}
+#app .searchBox .search {
+  display: flex;
+  margin: 0.25rem 0;
+  width: 3.5rem;
+  height: 0.38rem;
+  border-radius: 0.04rem;
+  border: 0.005rem solid #bdbdbd;
+  position: relative;
+  /* 使用webkit内核的浏览器 */
+  /* Firefox版本4-18 */
+  /* Firefox版本19+ */
+  /* IE浏览器 */
+}
+#app .searchBox .search input {
+  padding: 0.08rem;
+  width: 2.6rem;
+  height: 100%;
+  font-size: 0.15rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #666666;
+  line-height: 0.24rem;
+}
+#app .searchBox .search input::-webkit-input-placeholder {
+  color: #bdbdbd;
+}
+#app .searchBox .search input:-moz-placeholder {
+  color: #bdbdbd;
+}
+#app .searchBox .search input::-moz-placeholder {
+  color: #bdbdbd;
+}
+#app .searchBox .search input:-ms-input-placeholder {
+  color: #bdbdbd;
+}
+#app .searchBox .search .btn {
+  position: absolute;
+  padding: 0.08rem 0rem 0.08rem 0;
+  text-align: center;
+  right: 0.2rem;
+  bottom: 0;
+  width: 0.85rem;
+  height: 100%;
+  font-size: 0.17rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #666666;
+  line-height: 0.24rem;
+}
+#app .searchBox .search .btn span {
+  padding-left: 0.25rem;
+  border-left: 0.005rem solid #BDBDBD;
+}
+#app .searchBox .videosBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+#app .searchBox .videosBox .videoBox_left {
+  width: 50%;
+}
+#app .searchBox .videosBox .videoBox_left .video_one {
+  margin-top: 0.12rem;
+  width: 1.7rem;
+  height: 1.125rem;
+  position: relative;
+}
+#app .searchBox .videosBox .videoBox_left .video_one video {
+  width: 100%;
+  object-fit: fill;
+  height: 100%;
+}
+#app .searchBox .videosBox .videoBox_left .video_one .imgBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+}
+#app .searchBox .videosBox .videoBox_left .video_one .imgBox img {
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+}
+#app .searchBox .videosBox .videoBox_left .video_one .play {
+  height: 0.21rem;
+  background: #000000;
+  opacity: 0.5047999999999999;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.03rem 0.07rem;
+}
+#app .searchBox .videosBox .videoBox_left .video_one .play span {
+  font-size: 0.11rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 0.15rem;
+}
+#app .searchBox .videosBox .videoBox_left .video_one .play span:nth-child(2) {
+  margin-left: 0.04rem;
+}
+#app .searchBox .videosBox .videoBox_left p {
+  margin-top: 0.075rem;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  font-size: 0.14rem;
+}
+#app .bottomLast {
+  width: 100%;
+  background-color: #fff;
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 0.05rem;
+}
+#app .bottomLast ul {
+  display: flex;
+  justify-content: space-between;
+}
+#app .bottomLast li {
+  display: flex;
+  justify-content: center;
+  width: 33.333%;
+  padding-top: 0.05rem;
+  text-align: center;
+}
+#app .bottomLast li .bigBox {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#app .bottomLast li .imgBox {
+  margin-left: 0.28rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  display: flex;
+  justify-content: center;
+}
+#app .bottomLast li .imgBox img {
+  margin-left: 0.5rem;
+  height: 100%;
+}
+#app .bottomLast li P {
+  margin-top: 0.05rem;
+  font-size: 0.08rem;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+#app .bottomLast li.active p {
+  color: #25a8ff;
+}

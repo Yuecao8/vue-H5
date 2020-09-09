@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="assets/swiper.min.css">
+    <script src="./assets/swiper.js"></script>
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/yytk.css">
+    <title>有缘天空</title>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="swiper-container" ref="swiperContainer">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for='(item,index) in lunboList' :key="index" @click='goDetail(item.module_id,item.id,item.outlink,item.content_urls.share)'>
+                <!-- v-for='(item,index) in lunboList' :key="index" @click='goDetail(item.module_id,item.id)' -->
+                    <img :src="item.index_pic" alt="">
+                    <span ref="spanText">{{item.title |hideText}}</span>
+                    
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-bullets">
+                <span class="swiper-pagination-bullet" v-for='(item,index1) in lunboList' :key="index1"></span>
+            </div>
+        </div>
+
+        <div class="tab">
+            <!-- <p>sortList</p> -->
+            <div class="healthy">
+                <!-- 重点推荐 -->
+                  <div class="tab" >
+                        <ul class="tab_2">
+                            <li v-for="(item, index) in sortList" :key="index">
+                                <a href="javascript:" @click='goList(item.column_id,item.name)'>
+                                    <div class="imgBox">
+                                        <img :src="item.indexpic.host + item.indexpic.dir + item.indexpic.filepath + item.indexpic.filename" alt="">
+                                    </div>
+                                    <p>{{item.name}}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                <div v-for='(item,index) in sortList' :key="index">
+                    <div class="informationBox">
+                        <!-- 判断是否有头部 健康 -->
+                        <!-- <div class="information" v-if='item._extend.is_divide==1&&item._extend.divide_style==1'>
+                            <img src="./images/caiLeft.png" alt="">
+                            <span>
+                                <div class="imgBox">
+                                    <img :src="item.indexpic.host+item.indexpic.dir+item.indexpic.filepath+item.indexpic.filename"
+                                        alt="">
+                                </div>
+                                {{item.name}}
+                            </span>
+                            <img src="./images/caiRight.png" alt="">
+                        </div> -->
+                      
+                        <!-- 判断是否有头部 美食 &&item._extend.divide_style==2-->
+                        <div class="information" v-if='item.id==877&&item.data.length'>
+                            <img src="./images/bqkd.png" alt="">
+                            <span class="margin0">{{item._extend.custom_title}}</span>
+                            <img src="./images/yytkright.png" alt="">
+                        </div>
+                        <div class="information" v-if='item.id==879&&item.data.length'>
+                            <img src="./images/zpzj.png" alt="">
+                            <span class="margin0">{{item._extend.custom_title}}</span>
+                            <img src="./images/yytkright.png" alt="">
+                        </div>
+                        <div class="information" v-if='item.id==881&&item.data.length'>
+                            <img src="./images/jmdt.png" alt="">
+                            <span class="margin0">{{item._extend.custom_title}}</span>
+                            <img src="./images/yytkright.png" alt="">
+                        </div>
+                        <div class="SNinformation" v-if='item.cssid==11&&item.data.length'>
+                            <!-- <p style="font-size:0.12rem">{{sortList}}</p> -->
+                            <div class="top" @click='goList(item.column_id,item.name)'>
+                                <div class="left">
+                                    <img src="./images/yytkleft.png" alt="">
+                                    <span>{{item.name}}</span>
+                                </div>
+                                <div class="right">
+                                    <span>更多 ></span>
+                                </div>
+                            </div>
+                            <div class="list" v-for='(item1,index1) in item.data[0].data' :key="index1" @click='goDetail(item1.module_id,item1.id,item1.outlink,`http://share.hebtv.com/${item1.unique_sign}${item1.uri}`)'>
+                                <div class="listRight" v-if='item1.is_have_content_video==0||item1.is_have_content_tuji==1||item1.outlink!=""'>
+                                    <img :src="item1.index_pic" alt="">
+                                </div>
+                                <div class="listRight" v-if='item1.is_have_content_video==1'>
+                                    <video :src="item1.video.host+item1.video.dir+item1.video.filepath+item1.video.filename"
+                                        :poster="item1.index_pic" x5-playsinline="true" webkit-playsinline="true"
+                                        playsinline="true"></video>
+                                    <div class="play">
+                                        <img src="./images/time.png" alt="">
+                                        <span>{{item1.duration_format}}</span>
+                                    </div>
+                                </div>
+                                <div class="listLeft">
+                                        <span>{{item1.title}}</span>
+                                        <div class="time">
+                                            <span>{{item1.created_at}}</span>
+                                            <!-- <span>12:12:12</span> -->
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- 有大图 -->
+                        <div class="SNinformation" v-if='item.cssid==4&&item.data.length'>
+                            <div class="top" @click='goList(item.column_id,item.name)'>
+                                <div class="left">
+                                    <img src="./images/lineLeft.png" alt="">
+                                    <span>{{item.name}}</span>
+                                </div>
+                                <div class="right">
+                                    <span>更多 ></span>
+                                </div>
+                            </div>
+                            <div v-for='(item3,index3) in item.data' :key="index3">
+                                <div class="topPic" v-if='item3.cssid==4' v-for='(item4,index4) in item3.data' :key="index4"
+                                    @click='goDetail(item4.module_id,item4.id,item4.outlink,`http://share.hebtv.com/${item4.unique_sign}${item4.uri}`)'>
+                                    <p v-if='item4.title'>{{item4.title}}</p>
+                                    <img :src="item4.index_pic" alt="">
+                                </div>
+                                <!-- 左图右标题 -->
+                                <div class="list" v-if='item3.cssid==11' v-for='(item5,index5) in item3.data' :key="index5"
+                                    @click='goDetail(item5.module_id,item5.id,item5.outlink,`http://share.hebtv.com/${item5.unique_sign}${item5.uri}`)'>
+                                    
+                                    <!-- <div class="listRight">
+                                        <img :src="item5.index_pic" alt="">
+                                    </div> -->
+                                    <div class="listRight" v-if='item5.is_have_content_video==0||item5.is_have_content_tuji==1'>
+                                        <img :src="item5.index_pic" alt="">
+                                    </div>
+                                    <div class="listRight" v-if='item5.is_have_content_video==1'>
+                                        <video :src="item5.video.host+item5.video.dir+item5.video.filepath+item5.video.filename"
+                                            :poster="item5.index_pic" x5-playsinline="true" webkit-playsinline="true"
+                                            playsinline="true"></video>
+                                        <div class="play">
+                                            <img src="./images/time.png" alt="">
+                                            <span>{{item5.duration_format}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="listLeft">
+                                        <span>{{item5.title}}</span>
+                                        <div class="time">
+                                            <span>{{item5.created_at}}</span>
+                                            <!-- <span>12:12:12</span> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                 <!-- 左标题右图 -->
+                                <div class="list" v-if='item3.cssid==2' v-for='(item5,index5) in item3.data' :key="index5"
+                                    @click='goDetail(item5.module_id,item5.id,item5.outlink,`http://share.hebtv.com/${item5.unique_sign}${item5.uri}`)'>
+                                    <div class="listLeft">
+                                        <span>{{item5.title}}</span>
+                                        <div class="time">
+                                            <span>{{item5.created_at}}</span>
+                                            <!-- <span>12:12:12</span> -->
+                                        </div>
+                                    </div>
+                                    <!-- <div class="listRight">
+                                        <img :src="item5.index_pic" alt="">
+                                    </div> -->
+                                    <div class="listRight" v-if='item5.is_have_content_video==0||item5.is_have_content_tuji==1'>
+                                        <img :src="item5.index_pic" alt="">
+                                    </div>
+                                    <div class="listRight" v-if='item5.is_have_content_video==1'>
+                                        <video :src="item5.video.host+item5.video.dir+item5.video.filepath+item5.video.filename"
+                                            :poster="item5.index_pic" x5-playsinline="true" webkit-playsinline="true"
+                                            playsinline="true"></video>
+                                        <div class="play">
+                                            <img src="./images/time.png" alt="">
+                                            <span>{{item5.duration_format}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="videosBox" v-if='item3.cssid==8'>
+                                    <div class="videoBox_left" v-for='(item7,index7) in item3.data' :key="index7"
+                                        @click='goDetail(item7.module_id,item7.id,item7.outlink,`http://share.hebtv.com/${item7.unique_sign}${item7.uri}`)'>
+                                        <div class="video_one" v-if='item7.is_have_content_video==1'>
+                                            <video :src="item7.video.host+item7.video.dir+item7.video.filepath+item7.video.filename"
+                                                :poster="item7.index_pic" x5-playsinline="true" webkit-playsinline="true"
+                                                playsinline="true"></video>
+                                            <div class="play">
+                                                <img src="./images/time.png" alt="">
+                                                <span>{{item7.duration_format}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="video_one">
+                                            <img :src="item7.index_pic" alt="">
+                                        </div>
+                                        <p>{{item7.title}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 上大图下文字 -->
+                        <div class="SNinformation" v-if='item.cssid==10'>
+                            <div class="tujis">
+                                <ul>
+                                    <li v-for='(item6,index6) in item.data[0].data' :key="index6" @click='goDetail(item6.module_id,item6.id,item6.outlink,`http://share.hebtv.com/${item6.unique_sign}${item6.uri}`)'>
+                                        <div class="liImg">
+                                            <img :src="item6.index_pic" alt="">
+                                        </div>
+                                        <span>{{item6.title|hideText6}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 左右图片 -->
+                        <div class="SNinformation" v-if='item.cssid==8'>
+                            <div class="top" @click='goList(item.column_id,item.name)'>
+                                <div class="left">
+                                    <img src="./images/lineLeft.png" alt="">
+                                    <span>{{item.name}}</span>
+                                </div>
+                                <div class="right">
+                                    <span>更多 ></span>
+                                </div>
+                            </div>
+                            <div class="videosBox">
+                                <div class="videoBox_left" v-for='(item7,index7) in item.data[0].data' :key="index7"
+                                    @click='goDetail(item7.module_id,item7.id,item7.outlink,`http://share.hebtv.com/${item7.unique_sign}${item7.uri}`)'>
+                                    <div class="video_one" v-if='item7.is_have_content_video==1'>
+                                        <video :src="item7.video.host+item7.video.dir+item7.video.filepath+item7.video.filename"
+                                            :poster="item7.index_pic" x5-playsinline="true" webkit-playsinline="true"
+                                            playsinline="true"></video>
+                                        <div class="play">
+                                            <img src="./images/time.png" alt="">
+                                            <span>{{item7.duration_format}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="video_one" v-else>
+                                        <img :src="item7.index_pic" alt="">
+                                    </div>
+                                    <p>{{item7.title}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 小图标 下文字 -->
+<!--                    <div class="tab" v-if='item.cssid==9'>
+                        <ul class="tab_2">
+                            <li v-for='(item2,index2) in item.data[0].data' :key="index2">
+                                <a href="javascript:" @click='goList(item2._extend.relate_column_id,item2.title)'>
+                                    <div class="imgBox">
+                                        <img :src="item2.index_pic" alt="">
+                                    </div>
+                                    <p>{{item2.title}}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./assets/zepto.min.js"></script>
+<script src="./assets/sdk.js"></script>
+<script src="./js/yytk.js"></script>
+
+</html>

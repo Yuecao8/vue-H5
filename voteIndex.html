@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/voteIndex.css">
+    <title>投票</title>
+</head>
+
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="topPic">
+            <img :src="detailList.src" alt="">
+            <span>{{detailList.title}}</span>
+        </div>
+        <div class="voteAll">
+            <ul>
+                <li>
+                    <div class="top">
+                        <div class="imgBox">
+                            <img src="./images/vote01.png" alt="">
+                        </div>
+                        <span>作品数量</span>
+                    </div>
+                    <div class="bottom">
+                        <span>{{detailList.option_total}}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <div class="imgBox">
+                            <img src="./images/vote02.png" alt="">
+                        </div>
+                        <span>累计票数</span>
+                    </div>
+                    <div class="bottom">
+                        <span>{{detailList.total_votes}}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <div class="imgBox">
+                            <img src="./images/vote03.png" alt="">
+                        </div>
+                        <span>访问数量</span>
+                    </div>
+                    <div class="bottom">
+                        <span>{{detailList.total_voter}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="voteTime" >
+            <div class="time">
+                <h3>活动时间</h3>
+                <p>
+                    <span>{{detailList.start_time}}</span>
+                    至
+                    <span>{{detailList.closing_date}}</span>
+                </p>
+            </div>
+            <div class="time"  v-if='!isEnd'>
+                <h3>活动结束倒计时</h3> 
+                <div class="timeAll">
+                    <span>{{time.D}}天</span>
+                    <span>{{time.h}}时</span>
+                    <span>{{time.m}}分</span>
+                    <span>{{time.s}}秒</span>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="choose">
+            <ul>
+                <li v-for="(item, index) in sortList" :key="index" :class="{active: curTab == index}" @click="tabView(index,item.name)">{{item.name}}</li>
+                <!-- <li>选项2</li>
+                <li>选项3</li>
+                <li>选项4</li> -->
+            </ul>
+        </div>
+        <div class="searchBox">
+            <div class="search">
+                <input type="text" placeholder="请输入编号或作品名称" v-model="content">
+                <div class="btn" @click='search()'><span>搜索</span></div>
+            </div>
+            <div class="videosBox">
+                <div class="videoBox_left" v-for="(item, index) in optionList" :key="index" @click = goDetail(item.id,detailList.id)>
+                    <div class="video_one" >
+                        <!-- <video src="./images/ceshi.mp4" x5-playsinline="true" webkit-playsinline="true" playsinline="true"
+                        poster="./images/02.jpg"></video> -->
+                        <div class="imgBox">
+                            <img :src="item.index_pic?item.index_pic:'./images/02.jpg'" alt="">
+                        </div>
+                        <div class="play">
+                            <span>{{item.id}}号</span>
+                            <span>{{item.real_total_votes}}票</span>
+                        </div>
+                    </div>
+                    <p>{{item.title}}</p>
+                </div>
+                <!-- <div class="videoBox_left">
+                    <div class="video_one">
+                        <img src="./images/02.jpg" alt="">
+                        <div class="play">
+                            <span>1101号</span>
+                            <span>2011票</span>
+                        </div>
+                    </div>
+                    <p>科技携手新农宝</p>
+                </div>
+                <div class="videoBox_left">
+                    <div class="video_one">
+                        <img src="./images/02.jpg" alt="">
+                        <div class="play">
+                            <span>1101号</span>
+                            <span>2011票</span>
+                        </div>
+                    </div>
+                    <p>科技携手新农宝</p>
+                </div> -->
+            </div>
+        </div>
+        <div class="bottomLast">
+            <ul>
+                <li class="active">
+                    <a class="bigBox" :href='"./voteIndex.html?id="+detailList.id'>
+                        <div class="imgBox">
+                            <img src="./images/indexActive.png" alt="">
+                        </div>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="bigBox" :href='"./voteIntroduce.html?id="+detailList.id'>
+                        <div class="imgBox">
+                            <img src="./images/introduction.png" alt="">
+                        </div>
+                        <p>活动介绍</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="bigBox" :href='"./voteRanking.html?id="+detailList.id'>
+                        <div class="imgBox">
+                            <img src="./images/rank.png" alt="">
+                        </div>
+                        <p>排名</p>
+                    </a>
+                </li>
+            </ul> 
+        </div>
+    </div>
+    
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./js/voteIndex.js"></script>
+</html>

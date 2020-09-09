@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/voteDetail.css">
+    <title>投票详情</title>
+    <style>
+        .mask{
+            width: 100%;
+            font-size: 0.16rem;
+            position: absolute;
+            left: 0;
+            bottom: 0.8rem;
+            text-align: center
+        }
+        .mask span{
+            background-color: #ccc;
+            padding: 0.05rem 0.1rem;
+            border-radius: 0.05rem;
+            color:#fff
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="topPic">
+                <img :src="detailList.src" alt="">
+                <span>{{detailList.title}}</span>
+            </div>
+        <div class="voteAll">
+            <!-- <div class="user">
+                <div class="userPic">
+                    <img src="./images/02.jpg" alt="">
+                </div>
+                <div class="name">
+                    爱是永远
+                </div>
+            </div> -->
+            <ul>
+                <li>
+                    <div class="top">
+                        <div class="imgBox">
+                            <img src="./images/vote01.png" alt="">
+                        </div>
+                        <span>编号</span>
+                    </div>
+                    <div class="bottom">
+                        <span>{{option.id}}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <div class="imgBox">
+                            <img src="./images/vote02.png" alt="">
+                        </div>
+                        <span>票数</span>
+                    </div>
+                    <div class="bottom">
+                        <span>{{option.num}}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <div class="imgBox">
+                            <img src="./images/vote03.png" alt="">
+                        </div>
+                        <span>热度</span>
+                    </div>
+                    <div class="bottom">
+                        <span>{{option.num}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="sorts">
+            <div class="top">
+                <div class="imgBox">
+                    <img src="./images/sorts.png" alt="">
+                </div>
+                <h3>作品类别：{{option.sort_name}}</h3>
+            </div>
+            <div class="videoBox" v-if='OptionVideo.video'>
+                <video :poster="OptionVideo.poster" x5-playsinline="true" webkit-playsinline="true" playsinline="true" ref="videoBox" :controls='!playImg'>
+                    <source :src="OptionVideo.src">
+                        <!-- <source src="./images/ceshi.mp4" type=""> -->
+                </video>
+                <div class="videoPlay" @click='videoPlay'>
+                    <img src="./images/videoPlay.png" alt="" v-show='playImg'>
+                </div>
+            </div>
+        </div>
+        <div class="sorts">
+            <div class="top">
+                <div class="imgBox">
+                    <img src="./images/detail.png" alt="">
+                </div>
+                <h3>作品详情</h3>
+            </div>
+            <div class="content">
+                <!-- 1.“网信河北”微信公众号为开展“优秀网络短视频评选”投票活动的唯一平台。<br /> 2.每人每天最多可进行5次投票。<br />
+                3.参与方不要相信或参与任何机构或个人组织的违规活动。系统自动监测异常情况，一经发现立即将得票数清零，确定违规的取消参评资格。<br />
+                4.活动期间的有关问题和建议，可在“网信河北”微信公众号中进行留言。 -->
+                {{detailList.title}}
+            </div>
+        </div>
+        <div class="bottomLast">
+            <ul>
+                <li>
+                    <a class="bigBox" href="./voteIndex.html">
+                        <div class="imgBox">
+                            <img src="./images/index.png" alt="">
+                        </div>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li @click='zhichi()'>
+                    <div class="zhichi">
+                            <img src="./images/zhichi.png" alt="">
+                    </div>
+                    
+                </li>
+                <li>
+                    <a class="bigBox" href="./voteRanking.html">
+                        <div class="imgBox">
+                            <img src="./images/rank.png" alt="">
+                        </div>
+                        <p>排名</p>
+                    </a>
+                </li>
+            </ul> 
+        </div>
+        <div class="mask" v-show='tipFlag'>
+            <span>{{tip}}</span>
+        </div>
+    </div>
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./assets/zepto.min.js"></script>
+<script src="./assets/sdk.js"></script>
+<script src="./js/voteDetail.js"></script>
+</html>

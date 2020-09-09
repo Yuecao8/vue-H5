@@ -1,0 +1,296 @@
+.swiper1 {
+    height: 1.95rem;
+
+    .swiper-slide {
+        width: 100%;
+        height: 1.9rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        img {
+            width: 100%;
+            // height: 100%;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0rem;
+            bottom: 0rem;
+            width: 100%;
+            height: 0.5rem;
+            font-size: 0.16rem;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+            line-height: 0.5rem;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            padding: 0.1rem 0 0 0.1rem;
+        }
+    }
+
+    .swiper-pagination {
+        display: flex;
+        justify-content: flex-end;
+        height: 0.12rem;
+
+        .swiper-pagination-bullet {
+            width: 0.06rem;
+            height: 0.06rem;
+            background: #fff;
+            margin-right: 0.075rem;
+            margin-left: 0;
+        }
+
+        .swiper-pagination-bullet:last-child {
+            margin-right: 0.12rem;
+        }
+    }
+}
+
+.tab {
+    width: 100%;
+    // height: 0.63rem;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.1rem 0.25rem;
+
+        li {
+            display: flex;
+            justify-content: center;
+
+            a {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .imgBox {
+                width: 0.44rem;
+                height: 0.44rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            p {
+                margin-top: 0.075rem;
+                font-size: 0.12rem;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: rgba(51, 51, 51, 1);
+            }
+        }
+
+        // li.active{
+        //     border-bottom: 0.015rem solid #25A8FF;
+        // }
+    }
+}
+
+.gray {
+    width: 100%;
+    height: 0.06rem;
+    background: rgba(244, 244, 244, 1);
+}
+
+.news {
+    padding: 0.12rem 0rem;
+    margin: 0 0.12rem;
+    border-bottom: .005rem solid #EEEEEE;
+
+    .left {
+        width: 0.34rem;
+        float: left;
+        font-size: .17rem;
+        font-family: PingFangSC-Semibold;
+        font-weight: 600;
+        line-height: .3rem;
+        color: #666666;
+
+        span {
+            color: #25A8FF;
+        }
+    }
+
+    .swiper2 {
+        height: 0.52rem;
+        padding-left: 0.225rem;
+
+        .swiper-slide {
+            display: fixed;
+            flex-direction: column;
+            align-items: center;
+            font-size: .16rem;
+
+            .slide1 {
+                font-size: .16rem;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: rgba(51, 51, 51, 1);
+
+                // line-height: .24rem;
+                .fang::before {
+                    display: block;
+                    content: '';
+                    width: 0.05rem;
+                    height: 0.05rem;
+                    background-color: rgba(218, 218, 218, 1);
+                    position: relative;
+                    left: -0.1rem;
+                    top: .15rem;
+                }
+
+                .yuan::before {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+    }
+}
+
+
+.informationBox {
+    .information {
+        height: 0.06rem;
+        margin-top: 0.18rem;
+        position: relative;
+        justify-content: center;
+        display: flex;
+    }
+
+    .SNinformation {
+        padding: 0rem 0.12rem 0 0.12rem;
+
+        .list {
+            margin-top: 0.17rem;
+            padding-bottom: 0.09rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #EEE;
+
+            .listLeft {
+                width: 2.3rem;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                span {
+                    font-size: 0.16rem;
+                    font-family: PingFangSC-Regular;
+                    font-weight: 400;
+                    font-weight: 400;
+                    color: rgba(51, 51, 51, 1);
+                }
+
+                .time {
+                    display: flex;
+                    height: 0.14rem;
+                    margin-top: 0.1rem;
+                    line-height: 0.14rem;
+                    span {
+                        font-size: 0.1rem;
+                        color: rgba(153, 153, 153, 1);
+                    }
+
+                    .icon {
+                        margin-left: 0.12rem;
+                        background: url(../images/liulan.png) left center no-repeat;
+                        background-size: 0.13rem 0.1rem;
+
+                        span {
+                            margin-left: 0.15rem;
+                        }
+                    }
+                }
+            }
+
+            .listTop {
+                width: 100%;
+                .picBox{
+                    margin-top: 0.1rem;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .imgBox {
+                    width: 1.125rem;
+                    height: 0.75rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    background-color: #000;
+                    img {
+                        max-width: 100%;
+                        width: 100%;
+                        // height: 100%;
+                    }
+                }
+                .imgBox.big{
+                    margin-top: 0.1rem;
+                    width: 100%;
+                    height: 1.8rem;
+                }
+            }
+
+            .listRight {
+                width: 1.125rem;
+                height: 0.75rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                }
+
+                .play {
+                    width: 0.41rem;
+                    height: 0.125rem;
+                    position: absolute;
+                    right: 0.05rem;
+                    bottom: 0.05rem;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    span {
+                        display: inline-block;
+                        position: absolute;
+                        right: 0rem;
+                        bottom: -0.01rem;
+                        font-family: PingFangSC-Regular;
+                        font-weight: 400;
+                        color: rgba(255, 255, 255, 1);
+                        font-size: 0.1rem;
+                        -webkit-transform: scale(0.9);
+                    }
+                }
+            }
+
+        }
+
+        // .list:last-child {
+        //     border: none;
+        // }
+    }
+}

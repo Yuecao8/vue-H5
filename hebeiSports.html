@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="assets/swiper.min.css">
+    <script src="./assets/swiper.js"></script>
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/hebeiSports.css">
+    <title>河北体育</title>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="swiper-container" ref="swiperContainer">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for='(item,index) in lunboList' :key="index" @click='goDetail(item.module_id,item.id,item.outlink,`http://share.hebtv.com/${item.unique_sign}${item.uri}`)'>
+                    <img :src="item.index_pic" alt="">
+                    <span>{{item.title|hideText}}</span>
+                </div>
+                <!-- <div class="swiper-slide">
+                    <img src="./images/02.jpg" alt="">
+                    <span>秋日玩乐好趣处</span>
+                </div> -->
+            </div>
+            <div class="swiper-pagination swiper-pagination-bullets">
+                <span class="swiper-pagination-bullet" v-for='(item,index1) in lunboList' :key="index1"></span>
+                <!-- <span class="swiper-pagination-bullet"></span>-->
+            </div>
+        </div>
+        <div class="tab" v-show='flag'>
+            <ul>
+                <li v-for="(item, index) in tabList" :key="index" :class="{active: curTab == index}" @click="tabView(index)">
+                        <a href="#">
+                            <div class="imgBox">
+                                <img :src="item.indexpic.host + item.indexpic.dir + item.indexpic.filepath + item.indexpic.filename" alt="">
+                            </div>
+                            <p>{{item.name}}</p>
+                        </a>
+                    </li>
+                <!-- <li class="active">
+                    <a href="#">
+                        <div class="imgBox">
+                            <img src="./images/tab01.png" alt="">
+                        </div>    
+                        <p>体育资讯</p>
+                    </a>
+                </li> -->
+            </ul>
+            <div class="informationBox">
+                    <div class="SNinformation">
+                        <div class="list" v-for='(itemColumn,indexColumn) in columnList' :key="indexColumn"  @click='goDetail(itemColumn.module_id,itemColumn.id,itemColumn.outlink,`http://share.hebtv.com/${itemColumn.unique_sign}${itemColumn.uri}`)'>
+                            <div class="listRight" v-if='itemColumn.is_have_content_video==0'>
+                                <img :src="itemColumn.index_pic" alt="">
+                            </div>
+                            <div class="listRight" v-if='itemColumn.outlink'>
+                                    <img :src="itemColumn.index_pic" alt="">
+                                </div>
+                            <div class="listRight" v-if='itemColumn.is_have_content_video==1'>
+                                <video :src="itemColumn.video.host+itemColumn.video.dir+itemColumn.video.filepath+itemColumn.video.filename" :poster="itemColumn.index_pic" x5-playsinline="true" webkit-playsinline="true" playsinline="true"></video>
+                                <div class="play">
+                                    <img src="./images/time.png" alt="">
+                                    <span>{{itemColumn.duration_format}}</span>
+                                </div>
+                            </div>
+                            <div class="listLeft">
+                                    <span>{{itemColumn.title}}</span>
+                                    <div class="time">
+                                        <span>{{itemColumn.updated_at}}</span>
+                                        <!-- <span>12:12:12</span> -->
+                                    </div>
+                                </div>
+                        </div>
+                        <!-- <div class="list">
+                            <div class="listLeft">
+                                <span>商务部:将取消行政事业性收费 推动出口退税等落</span>
+                                <div class="time">
+                                    <span>2018-01-12</span>
+                                    <span>12:12:12</span>
+                                </div>
+                            </div>
+                            <div class="listRight">
+                                <img src="./images/02.jpg" alt="">
+                                <div class="play" >
+                                    <img src="./images/time.png" alt="">
+                                    <span>02:24</span>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+        </div>
+       
+    </div>
+</body>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./assets/zepto.min.js"></script>
+<script src="./assets/sdk.js"></script>
+<script src="./assets/vconsole.min.js"></script>
+<script src="./js/hebeiSports.js"></script>
+
+</html>

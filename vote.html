@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="assets/swiper.min.css">
+    <script src="./assets/swiper.js"></script>
+    <script src="./assets/change_resize.js"></script>
+    <link rel="stylesheet" href="./css/life.css">
+    <title>投票</title>
+    <style>
+        .listLeft{
+            margin-left:0.22rem!important;
+            padding: 0.05rem 0 !important;
+        }
+        .listLeft .time span{
+            color:rgba(153,153,153,1) !important;
+            font-size: 0.12rem !important;
+        }
+    </style>
+<body>
+    <div id="app" v-cloak v-show='flag'>
+        <div class="informationBox">
+            <div class="SNinformation" style="padding-top:0;">
+                <div class="list" v-for='(item,index) in listData' :key="index" @click='goIndex(item.id)'>
+                        <div class="listRight"> 
+                            <img :src="item.index_pic.host+item.index_pic.dir+item.index_pic.filepath+item.index_pic.filename" alt="">
+                        </div>
+                        <div class="listLeft">
+                            <span>{{item.title}}</span>
+                            <div class="time">
+                                <span>{{item.created_at |hideText(10)}}-{{item.closing_date|hideText(10)}}</span>
+                            </div>
+                        </div>
+                        <!-- <div class="listRight">
+                            <video src="./images/ceshi.mp4" poster="./images/02.jpg"
+                                x5-playsinline="true" webkit-playsinline="true" playsinline="true"></video>
+                            <div class="play">
+                                <img src="./images/time.png" alt="">
+                                <span>2019-12-2</span>
+                            </div>
+                        </div> -->
+    
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</head>
+<script src="./assets/vue.js"></script>
+<script src="./assets/axios.min.js"></script>
+<script src="./assets/zepto.min.js"></script>
+<script src="./assets/sdk.js"></script>
+<script src="./js/vote.js"></script>
+</html>
